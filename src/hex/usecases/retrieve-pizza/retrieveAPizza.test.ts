@@ -10,7 +10,7 @@ describe("pizzas list", () => {
         store = initReduxStore({ pizzaGateway })
 
         store.dispatch(retrieveAPizza("1"))
-        expect(store.getState()).toEqual({ pizzaList: null })
+        expect(store.getState()).toEqual({ pizzaList: [] })
     })
 
     it("should retrieve a pizza", async () => {

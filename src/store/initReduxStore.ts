@@ -28,7 +28,7 @@ export const initReduxStore = (dependencies: Partial<Dependencies>) => {
 
 }
 export interface AppState {
-    pizzaList: PizzaOptions[] | null
+    pizzaList: PizzaOptions[]
 }
 export type PizzaOptions = {
     pizza: Pizza,
