@@ -14,7 +14,7 @@ interface Dependencies {
 export const initReduxStore = (dependencies: Partial<Dependencies>) => {
     return configureStore({
         reducer: {
-            pizzaList: pizzaListReducer
+            pizzaOptionsList: pizzaListReducer
         },
         devTools: true,
         middleware: (getDefaultMiddleware) =>
@@ -28,7 +28,7 @@ export const initReduxStore = (dependencies: Partial<Dependencies>) => {
 
 }
 export interface AppState {
-    pizzaList: PizzaOptions[]
+    pizzaOptionsList: PizzaOptions[]
 }
 export type PizzaOptions = {
     pizza: Pizza,
