@@ -1,14 +1,14 @@
 import { initReduxStore, ReduxStore } from "../../../store/initReduxStore"
-import { retrieveAPizzaAction } from '../retrieve-pizza/action';
+import { addedIngredientOptionToPizzaAction, retrieveAPizzaAction } from '../retrieve-pizza/action';
 import { Pizza } from '../../model/Pizza';
-import { addIngredientOptionToPizza } from "./addIngredientOptionToPizza";
+import { addPizzaToBasket } from "./addPizzaToBasket";
 
-describe("add pizzaOptions", () => {
+describe("add pizza to basket", () => {
     let store: ReduxStore
     beforeEach(() => {
         store = initReduxStore({})
     })
-    it("should add an option ingredient to a pizza", async () => {
+    it("should add a pizza to basket", async () => {
         const pizza: Pizza = {
             id: "1",
             name: "Fun Pizza",
@@ -17,8 +17,8 @@ describe("add pizzaOptions", () => {
             ]
         }
         store.dispatch(retrieveAPizzaAction({ pizza }))
-        await store.dispatch(addIngredientOptionToPizza("1", "3"))
-
+        store.dispatch(addedIngredientOptionToPizzaAction({ pizzaId: "1", ingredientId: "3" }))
+        store.dispatch(addPizzaToBasket("1"))
         expect(store.getState()).toEqual({
             pizzaOptionsList: [
                 {
@@ -32,7 +32,7 @@ describe("add pizzaOptions", () => {
                     ingredientsOrder: ["3"]
                 }
             ],
-            basket: []
+            basket: [{ pizzaId: "1", ingredientIds: ["3"] }]
         })
     })
 

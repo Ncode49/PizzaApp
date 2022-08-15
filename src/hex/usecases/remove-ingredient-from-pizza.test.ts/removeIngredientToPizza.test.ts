@@ -1,14 +1,14 @@
 import { initReduxStore, ReduxStore } from "../../../store/initReduxStore"
-import { retrieveAPizzaAction } from '../retrieve-pizza/action';
+import { addedIngredientOptionToPizzaAction, retrieveAPizzaAction } from '../retrieve-pizza/action';
 import { Pizza } from '../../model/Pizza';
-import { addIngredientOptionToPizza } from "./addIngredientOptionToPizza";
+import { removeIngredientOptionFromPizza } from "./removeIngredientOptionFromPizza";
 
-describe("add pizzaOptions", () => {
+describe("remove ingredient pizzaOptions", () => {
     let store: ReduxStore
     beforeEach(() => {
         store = initReduxStore({})
     })
-    it("should add an option ingredient to a pizza", async () => {
+    it("should remove an option ingredient to a pizza", async () => {
         const pizza: Pizza = {
             id: "1",
             name: "Fun Pizza",
@@ -17,8 +17,8 @@ describe("add pizzaOptions", () => {
             ]
         }
         store.dispatch(retrieveAPizzaAction({ pizza }))
-        await store.dispatch(addIngredientOptionToPizza("1", "3"))
-
+        store.dispatch(addedIngredientOptionToPizzaAction({ pizzaId: "1", ingredientId: "3" }))
+        await store.dispatch(removeIngredientOptionFromPizza("1", "3"))
         expect(store.getState()).toEqual({
             pizzaOptionsList: [
                 {
@@ -29,9 +29,10 @@ describe("add pizzaOptions", () => {
                         { id: "4", name: "feta cheese", price: 1.0 }
                         ]
                     },
-                    ingredientsOrder: ["3"]
+                    ingredientsOrder: []
                 }
-            ],
+            ]
+            ,
             basket: []
         })
     })

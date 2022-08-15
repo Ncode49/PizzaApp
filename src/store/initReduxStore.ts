@@ -1,6 +1,7 @@
 import { Action, AnyAction, configureStore, Store, ThunkAction, ThunkDispatch } from "@reduxjs/toolkit"
 import { Pizza } from "../hex/model/Pizza"
 import { PizzaGateway } from "../hex/model/pizzaGateway"
+import { basketReducer } from "./reducers/basketReducer.reducer"
 import { pizzaListReducer } from "./reducers/pizzaList.reducer"
 
 
@@ -14,7 +15,8 @@ interface Dependencies {
 export const initReduxStore = (dependencies: Partial<Dependencies>) => {
     return configureStore({
         reducer: {
-            pizzaOptionsList: pizzaListReducer
+            pizzaOptionsList: pizzaListReducer,
+            basket: basketReducer
         },
         devTools: true,
         middleware: (getDefaultMiddleware) =>
@@ -27,9 +29,20 @@ export const initReduxStore = (dependencies: Partial<Dependencies>) => {
     })
 
 }
+
+
 export interface AppState {
     pizzaOptionsList: PizzaOptions[]
+    basket: PizzaOrderId[]
+
 }
+
+export type PizzaOrderId = {
+    pizzaId: string
+    ingredientIds: Array<string>
+}
+
+
 export type PizzaOptions = {
     pizza: Pizza,
     ingredientsOrder: Array<string>

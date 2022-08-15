@@ -48,6 +48,9 @@ describe("pizzas list", () => {
 
     const _retrieveAPizza = (id: string) => store.dispatch(retrieveAPizza(id))
     const expectedPizzaList = (pizzaOptionsList: PizzaOptions[]) => {
-        expect(store.getState()).toEqual({ pizzaOptionsList: pizzaOptionsList })
+        expect(store.getState()).toEqual({
+            pizzaOptionsList: pizzaOptionsList,
+            basket: []
+        })
     }
 })
