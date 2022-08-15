@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { retrieveAPizzaAction, addedIngredientOptionToPizzaAction, removedIngredientOptionToPizzaAction } from '../../hex/usecases/retrieve-pizza/action';
+import { retrieveAPizzaAction, addedIngredientOptionToPizzaAction, removedIngredientOptionToPizzaAction } from '../../hex/usecases/retrieve-a-pizza/action';
 import { PizzaOptions } from '../initReduxStore';
 
 
