@@ -11,26 +11,12 @@ import { Ingredients } from "../../hex/model/Pizza";
 import { addIngredientOptionToPizza } from "../../hex/usecases/add-ingredient-to-pizza/addIngredientOptionToPizza";
 import { removeIngredientOptionFromPizza } from "../../hex/usecases/remove-ingredient-from-pizza.test.ts/removeIngredientOptionFromPizza";
 import { addPizzaToBasket } from "../../hex/usecases/add-pizza-to-order/addPizzaToBasket";
-
-export const PizzaList = () => {
-  const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const pizzaList = useSelector((state: AppState) => state.pizzaOptionsList);
-  useEffect(() => {
-    dispatch(retrieveAllPizzas());
-  }, [dispatch]);
-  return (
-    <ul>
-      {pizzaList.map((pizzaOption) => (
-        <li>
-          <Pizza {...pizzaOption} />
-        </li>
-      ))}
-    </ul>
-  );
-};
+import { selectPizzaPrice } from "./selectPizzaPrice";
+import { IngredientOption } from "./IngredientOption";
 
 export const Pizza = (pizzaOption: PizzaOptions) => {
   const pizzaId = pizzaOption.pizza.id;
+  const totalPricePizza = useSelector(selectPizzaPrice(pizzaId));
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   return (
     <>
@@ -47,42 +33,9 @@ export const Pizza = (pizzaOption: PizzaOptions) => {
             pizzaId={pizzaId}
           />
         ))}
+        <p>Price : {totalPricePizza}</p>
         <button type="submit">Ajouter au panier</button>
       </form>
-    </>
-  );
-};
-
-export const IngredientOption = ({
-  pizzaId,
-  ingredientOption,
-}: {
-  pizzaId: string;
-  ingredientOption: Ingredients;
-}) => {
-  const [checked, setChecked] = useState(false);
-  const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const totalPricePizza = useSelector((state: AppState) => {
-    const pizzaOption = state.pizzaOptionsList.filter(
-      (p) => p.pizza.id == pizzaId
-    )[0];
-
-    let sum = 0;
-    return sum;
-  });
-  const handleChange = () => {
-    setChecked(!checked);
-    checked
-      ? dispatch(removeIngredientOptionFromPizza(pizzaId, ingredientOption.id))
-      : dispatch(addIngredientOptionToPizza(pizzaId, ingredientOption.id));
-  };
-  return (
-    <>
-      <input type="checkbox" checked={checked} onChange={handleChange} />
-      <label>
-        {ingredientOption.name} - {ingredientOption.price} euros
-      </label>
-      <p>Price : {totalPricePizza}</p>
     </>
   );
 };

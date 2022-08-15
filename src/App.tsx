@@ -1,4 +1,4 @@
-import { PizzaList } from "./adapters/primary/Pizza";
+import { PizzaList } from "./adapters/primary/PizzaList";
 
 function App() {
   return <PizzaList />;
