@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { retrieveAPizzaAction, addedIngredientOptionToPizzaAction, removedIngredientOptionToPizzaAction } from '../../hex/usecases/retrieve-a-pizza/action';
+import { retrieveAPizzaAction, addedIngredientOptionToPizzaAction, removedIngredientOptionToPizzaAction, retrieveAllPizzasAction } from '../../hex/usecases/retrieve-a-pizza/action';
 import { PizzaOptions } from '../initReduxStore';
 
 
@@ -17,6 +17,10 @@ export const pizzaListReducer = createReducer<PizzaOptions[]>(initialState, buil
             return [...state, pizzaOptions]
         }
         return state
+    });
+    builder.addCase(retrieveAllPizzasAction, (state, { payload }) => {
+        const pizzaOptionsList = payload.pizzas.map(p => { return { pizza: p, ingredientsOrder: [] } })
+        return [...state, ...pizzaOptionsList]
     });
 
     builder.addCase(addedIngredientOptionToPizzaAction, (state, { payload }) => {

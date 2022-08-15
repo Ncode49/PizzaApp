@@ -10,7 +10,10 @@ export class InmemoryPizzaGateway implements PizzaGateway {
     }
 
     byId(id: string) {
-        return Promise.resolve(this._pizzas[0])
+        return Promise.resolve(this._pizzas.filter(pizza => pizza.id == id)[0])
+    }
 
+    all(): Promise<Pizza[]> {
+        return Promise.resolve(this._pizzas)
     }
 }
