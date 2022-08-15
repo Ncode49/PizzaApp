@@ -5,7 +5,7 @@ export interface Pizza {
     ]
 }
 
-interface Ingredients {
+export interface Ingredients {
     id: string,
     name: string,
     price: number

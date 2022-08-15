@@ -1,6 +1,6 @@
 import { ReduxStore, initReduxStore } from "../../../store/initReduxStore"
 import { Pizza } from "../../model/Pizza"
-import { retrieveAPizzaAction, addedIngredientOptionToPizzaAction } from "../retrieve-a-pizza/action"
+import { retrieveAPizzaAction, addedIngredientOptionToPizzaAction } from "../action"
 import { removeIngredientOptionFromPizza } from "./removeIngredientOptionFromPizza"
 
 describe("remove ingredient pizzaOptions", () => {

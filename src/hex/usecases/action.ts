@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import { Pizza } from "../../model/Pizza";
+import { Pizza } from "../model/Pizza";
 
 export const retrieveAllPizzasAction = createAction<{ pizzas: Pizza[] }>('pizza/retrieveAllPizzas')
 

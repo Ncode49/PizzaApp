@@ -1,5 +1,5 @@
 import { initReduxStore, ReduxStore } from "../../../store/initReduxStore"
-import { retrieveAPizzaAction } from '../retrieve-a-pizza/action';
+import { retrieveAPizzaAction } from '../action';
 import { Pizza } from '../../model/Pizza';
 import { addIngredientOptionToPizza } from "./addIngredientOptionToPizza";
 
