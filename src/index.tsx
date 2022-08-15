@@ -13,16 +13,24 @@ pizzaGateway.pizzas = [
     id: "1",
     name: "Fun Pizza",
     ingredients: [
-      { id: "3", name: "tomato", price: 0.5 },
+      { id: "aza", name: "tomato", price: 0.5 },
+      { id: "abc", name: "sliced mushrooms", price: 0.5 },
       { id: "4", name: "feta cheese", price: 1.0 },
+      { id: "def", name: "sausages", price: 1.0 },
+      { id: "ghi", name: "sliced onion", price: 0.5 },
+      { id: "klm", name: "mozzarella cheese", price: 0.5 },
+      { id: "nom", name: "oregano", price: 1.0 },
     ],
   },
   {
     id: "2",
     name: "Super Mushroom Pizza",
     ingredients: [
-      { id: "3", name: "tomato", price: 0.5 },
-      { id: "5", name: "bacon", price: 1.0 },
+      { id: "aza", name: "tomato", price: 0.5 },
+      { id: "dfd", name: "bacon", price: 1 },
+      { id: "klm", name: "mozzarella cheese", price: 0.5 },
+      { id: "abc", name: "sliced mushrooms", price: 0.5 },
+      { id: "nom", name: "oregano", price: 1.0 },
     ],
   },
 ];
