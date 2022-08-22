@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { retrieveAllPizzas } from "../../hex/usecases/retrieve-all-pizzas/retrieveAllPizza";
+import { retrieveAllPizzas } from "../../domain/usecases/retrieve-all-pizzas/retrieveAllPizza";
 import { AppDispatch, AppState } from "../../store/initReduxStore";
 import { Pizza } from "./Pizza";
 

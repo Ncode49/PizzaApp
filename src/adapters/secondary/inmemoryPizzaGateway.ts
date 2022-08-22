@@ -1,5 +1,5 @@
-import { Pizza } from "../../hex/model/Pizza"
-import { PizzaGateway } from "../../hex/model/pizzaGateway"
+import { Pizza } from "../../domain/model/Pizza"
+import { PizzaGateway } from "../../domain/model/pizzaGateway"
 
 export class InmemoryPizzaGateway implements PizzaGateway {
 

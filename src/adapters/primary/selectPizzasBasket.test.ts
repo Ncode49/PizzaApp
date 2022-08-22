@@ -1,5 +1,5 @@
-import { Pizza } from "../../hex/model/Pizza";
-import { addedPizzaToBasketAction, retrieveAPizzaAction } from "../../hex/usecases/action";
+import { Pizza } from "../../domain/model/Pizza";
+import { addedPizzaToBasketAction, retrieveAPizzaAction } from "../../domain/usecases/action";
 import { ReduxStore, initReduxStore } from "../../store/initReduxStore";
 import { selectPizzasBasket } from "./selectPizzasBasket";
 

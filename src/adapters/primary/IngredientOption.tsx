@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Ingredients } from "../../hex/model/Pizza";
-import { addIngredientOptionToPizza } from "../../hex/usecases/add-ingredient-to-pizza/addIngredientOptionToPizza";
-import { removeIngredientOptionFromPizza } from "../../hex/usecases/remove-ingredient-from-pizza.test.ts/removeIngredientOptionFromPizza";
+import { Ingredients } from "../../domain/model/Pizza";
+import { addIngredientOptionToPizza } from "../../domain/usecases/add-ingredient-to-pizza/addIngredientOptionToPizza";
+import { removeIngredientOptionFromPizza } from "../../domain/usecases/remove-ingredient-from-pizza.test.ts/removeIngredientOptionFromPizza";
 import { AppDispatch } from "../../store/initReduxStore";
 
 export const IngredientOption = ({

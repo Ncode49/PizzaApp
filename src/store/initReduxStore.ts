@@ -1,6 +1,6 @@
 import { Action, AnyAction, configureStore, Store, ThunkAction, ThunkDispatch } from "@reduxjs/toolkit"
-import { Pizza } from "../hex/model/Pizza"
-import { PizzaGateway } from "../hex/model/pizzaGateway"
+import { Pizza } from "../domain/model/Pizza"
+import { PizzaGateway } from "../domain/model/pizzaGateway"
 import { basketReducer } from "./reducers/basketReducer.reducer"
 import { pizzaListReducer } from "./reducers/pizzaList.reducer"
 

@@ -5,12 +5,12 @@ import {
   AppState,
   PizzaOptions,
 } from "../../store/initReduxStore";
-import { retrieveAllPizzas } from "../../hex/usecases/retrieve-all-pizzas/retrieveAllPizza";
+import { retrieveAllPizzas } from "../../domain/usecases/retrieve-all-pizzas/retrieveAllPizza";
 import { useSelector } from "react-redux";
-import { Ingredients } from "../../hex/model/Pizza";
-import { addIngredientOptionToPizza } from "../../hex/usecases/add-ingredient-to-pizza/addIngredientOptionToPizza";
-import { removeIngredientOptionFromPizza } from "../../hex/usecases/remove-ingredient-from-pizza.test.ts/removeIngredientOptionFromPizza";
-import { addPizzaToBasket } from "../../hex/usecases/add-pizza-to-order/addPizzaToBasket";
+import { Ingredients } from "../../domain/model/Pizza";
+import { addIngredientOptionToPizza } from "../../domain/usecases/add-ingredient-to-pizza/addIngredientOptionToPizza";
+import { removeIngredientOptionFromPizza } from "../../domain/usecases/remove-ingredient-from-pizza.test.ts/removeIngredientOptionFromPizza";
+import { addPizzaToBasket } from "../../domain/usecases/add-pizza-to-order/addPizzaToBasket";
 import { selectPizzaPrice } from "./selectPizzaPrice";
 import { IngredientOption } from "./IngredientOption";
 

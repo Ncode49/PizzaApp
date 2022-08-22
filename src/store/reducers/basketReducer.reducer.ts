@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { PizzaOrderId } from "../initReduxStore";
-import { addedPizzaToBasketAction } from '../../hex/usecases/action';
+import { addedPizzaToBasketAction } from '../../domain/usecases/action';
 
 const initialState: PizzaOrderId[] = [];
 export const basketReducer = createReducer<PizzaOrderId[]>(initialState, builder => {

@@ -44,3 +44,35 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Hexagonal architecture
+
+hexagonale architecture https://herbertograca.com/tag/hexagonal-architecture/
+
+### adapters/primary
+
+React components
+
+### adapters/secondary
+
+contain inmemory and real datasource
+
+### Domain
+
+Core of the application contain business logic coupled with redux
+
+### Domain/Model
+
+Interface of the object returned by the gateway
+
+#### Domain/Usecase
+
+Action of the user, it is the business logic of the app, unit tested
+
+### Store
+
+Reducer and init the redux store
+
+## Testing
+
+Unit test usecase, all the dependancies (secondary adapters are stub with inmemory)
