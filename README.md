@@ -45,6 +45,13 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Technologies
+
+The projet is done with react redux, typescript in an hexagonale architecture
+
+- react is used as a primary adapter to display the data
+- redux is used to encapsulate the business logic and get an unit testable application
+
 ## Hexagonal architecture
 
 hexagonale architecture https://herbertograca.com/tag/hexagonal-architecture/
@@ -61,6 +68,10 @@ contain inmemory and real datasource
 
 Core of the application contain business logic coupled with redux
 
+### Store
+
+Reducer and init the redux store
+
 ### Domain/Model
 
 Interface of the object returned by the gateway
@@ -68,10 +79,6 @@ Interface of the object returned by the gateway
 #### Domain/Usecase
 
 Action of the user, it is the business logic of the app, unit tested
-
-### Store
-
-Reducer and init the redux store
 
 ## Testing
 
